@@ -4,46 +4,49 @@
 #include "kernel.h"
 #include "gpio.h"
 
-__attribute__((noreturn)) void Task_PA1_Toggle(void){
+__attribute__((noreturn)) void Task_PD4_Toggle(void){
 	
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	GPIOA->MODER &=~GPIO_MODER_MODE1_Msk;
-	GPIOA->MODER |= GPIO_MODER_MODE1_0;
+	//orange
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+	GPIOD->MODER &=~GPIO_MODER_MODE4_Msk;
+	GPIOD->MODER |= GPIO_MODER_MODE4_0;
 	
 	while(1){
-		GPIOA->BSRR |= GPIO_BSRR_BS1;
-		Kernel_Task_Sleep(100);
-		GPIOA->BSRR |= GPIO_BSRR_BR1;
-		Kernel_Task_Sleep(100);
+		GPIOD->BSRR |= GPIO_BSRR_BR4;
+		Kernel_Task_Sleep(1000);
+		GPIOD->BSRR |= GPIO_BSRR_BS4;
+		Kernel_Task_Sleep(1000);
 	}
 
 }
 
-__attribute__((noreturn)) void Task_PA2_Toggle(void){
+__attribute__((noreturn)) void Task_PD5_Toggle(void){
 	
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	GPIOA->MODER &=~GPIO_MODER_MODE2_Msk;
-	GPIOA->MODER |= GPIO_MODER_MODE2_0;
+	//red led
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+	GPIOD->MODER &=~GPIO_MODER_MODE5_Msk;
+	GPIOD->MODER |= GPIO_MODER_MODE5_0;
 	
 	while(1){
-		GPIOA->BSRR |= GPIO_BSRR_BS2;
-		Kernel_Task_Sleep(200);
-		GPIOA->BSRR |= GPIO_BSRR_BR2;
-		Kernel_Task_Sleep(200);
+		GPIOD->BSRR |= GPIO_BSRR_BR5;
+		Kernel_Task_Sleep(500);
+		GPIOD->BSRR |= GPIO_BSRR_BS5;
+		Kernel_Task_Sleep(500);
 	}
 }
 
-__attribute__((noreturn)) void Task_PA3_Toggle(void){
+__attribute__((noreturn)) void Task_PG6_Toggle(void){
 	
-	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
-	GPIOA->MODER &=~GPIO_MODER_MODE3_Msk;
-	GPIOA->MODER |= GPIO_MODER_MODE3_0;
+	//green
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOGEN;
+	GPIOG->MODER &=~GPIO_MODER_MODE6_Msk;
+	GPIOG->MODER |= GPIO_MODER_MODE6_0;
 	
 	while(1){
-		GPIOA->BSRR |= GPIO_BSRR_BS3;
-		Kernel_Task_Sleep(300);
-		GPIOA->BSRR |= GPIO_BSRR_BR3;
-		Kernel_Task_Sleep(300);
+		GPIOG->BSRR |= GPIO_BSRR_BR6;
+		Kernel_Task_Sleep(2000);
+		GPIOG->BSRR |= GPIO_BSRR_BS6;
+		Kernel_Task_Sleep(2000);
 	}
 }
 

@@ -5,7 +5,7 @@
  ; Source        : https://github.com/farid132097/STM32G030_RTOS
  ; Description   : ARM Cortex M4F kernel for bare-metal RTOS
  ; Devices       : Tested on STM32F469NIHx
- ; Created       : Sep 02, 2025, 09:30 PM
+ ; Created       : May 06, 2026, 02:29 PM
  ; Last Modified : May 06, 2026, 02:29 PM
 
 
@@ -29,17 +29,17 @@
 
 
 ;;===============================define address bases starting===============================;; 
-DEF_CODE_BASE         EQU        0x00000000
 DEF_SRAM_BASE         EQU        0x20000000
 EDF_SRAMM_END         EQU        0x20001FFF
 DEF_PERIPHERAL_BASE   EQU        0x40000000
 DEF_APB1_BASE         EQU        DEF_PERIPHERAL_BASE + 0x00000000
 DEF_APB2_BASE         EQU        DEF_PERIPHERAL_BASE + 0x00010000
-DEF_AHB_BASE          EQU        DEF_PERIPHERAL_BASE + 0x00020000
-DEF_IOPORT_BASE       EQU        DEF_PERIPHERAL_BASE + 0x10000000
+DEF_AHB1_BASE         EQU        DEF_PERIPHERAL_BASE + 0x00020000
+DEF_AHB2_BASE         EQU        DEF_PERIPHERAL_BASE + 0x10000000
+DEF_AHB3_BASE         EQU        DEF_PERIPHERAL_BASE + 0x20000000
+DEF_IOPORT_BASE       EQU        DEF_AHB1_BASE       + 0x00000000
 DEF_GPIO_BASE         EQU        DEF_IOPORT_BASE     + 0x00000000
-DEF_RCC_BASE          EQU        DEF_AHB_BASE        + 0x00001000
-DEF_FLASH_BASE        EQU        DEF_CODE_BASE       + 0x00000000
+DEF_RCC_BASE          EQU        DEF_AHB1_BASE       + 0x00003800
 DEF_SCS_BASE          EQU        0xE000E010
 DEF_NVIC_BASE         EQU        0xE000E100
 DEF_SCB_BASE          EQU        0xE000ED00
@@ -86,6 +86,7 @@ DEF_SCB_VTOR          EQU        DEF_SCB_BASE        + 0x00000008
 DEF_SCB_AIRCR         EQU        DEF_SCB_BASE        + 0x0000000C
 DEF_SCB_SCR           EQU        DEF_SCB_BASE        + 0x00000010
 DEF_SCB_CCR           EQU        DEF_SCB_BASE        + 0x00000014
+DEF_SCB_SHPR1         EQU        DEF_SCB_BASE        + 0x00000018
 DEF_SCB_SHPR2         EQU        DEF_SCB_BASE        + 0x0000001C
 DEF_SCB_SHPR3         EQU        DEF_SCB_BASE        + 0x00000020
 ;;==================================define SCB addresses end=================================;;
@@ -95,7 +96,6 @@ DEF_SCB_SHPR3         EQU        DEF_SCB_BASE        + 0x00000020
 
 
 ;;===========================define GPIO related addresses starting==========================;; 
-DEF_RCC_IOPENR        EQU        DEF_RCC_BASE        + 0x00000034
 DEF_GPIOA_BASE        EQU        DEF_GPIO_BASE       + 0x00000000
 DEF_GPIOB_BASE        EQU        DEF_GPIO_BASE       + 0x00000400
 DEF_GPIOC_BASE        EQU        DEF_GPIO_BASE       + 0x00000800
@@ -256,7 +256,7 @@ KER_TASK_TOUT         SPACE      8*DEF_KER_MAX_NTASK               ;2 byte timeo
 					  MACRO_GPIO_INIT                              ;macro name
 					  
 					  ;enable clock from rcc
-                      LDR        R0,   =DEF_RCC_IOPENR             ;load IOPENR address
+                      LDR        R0,   =DEF_GPIO_BASE              ;load gpio base addr
 					  LDR        R1,   [R0]                        ;load IOPENR val
 					  LDR        R2,   =0x00000001                 ;mask bit0
 	                  ORRS       R1,   R1, R2                      ;set bit 0
