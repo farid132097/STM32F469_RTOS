@@ -5,13 +5,13 @@ F (.\main.c)(0x6A01C253)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4
 I (stm32f469xx.h)(0x69FEF505)
 I (C:\Keil\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm4.h)(0x69FC5779)
 I (system_stm32f4xx.h)(0x69FEF51C)
-I (kernel.h)(0x69FEF942)
+I (kernel.h)(0x6A045586)
 I (gpio.h)(0x6A01C25B)
-F (.\gpio.c)(0x6A01C34B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="541" -DSTM32F469xx -D_RTE_-o ./objects/gpio.o -MMD)
+F (.\gpio.c)(0x6A02EC8F)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="541" -DSTM32F469xx -D_RTE_-o ./objects/gpio.o -MMD)
 I (stm32f469xx.h)(0x69FEF505)
 I (C:\Keil\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm4.h)(0x69FC5779)
 I (system_stm32f4xx.h)(0x69FEF51C)
-I (kernel.h)(0x69FEF942)
+I (kernel.h)(0x6A045586)
 I (gpio.h)(0x6A01C25B)
 F (.\RTE\Device\startup_stm32f469xx.s)(0x69FEF538)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 541" -Wa,armasm,--pd,"STM32F469xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f469xx.o)
 F (.\RTE\Device\system_stm32f4xx.c)(0x69FEF52B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-D__UVISION_VERSION="541" -DSTM32F469xx -D_RTE_-o ./objects/system_stm32f4xx.o -MMD)
@@ -19,5 +19,5 @@ I (RTE\Device\stm32f4xx.h)(0x69FEF510)
 I (RTE\Device\stm32f469xx.h)(0x69FEF505)
 I (C:\Keil\ARM\CMSIS\6.3.0\CMSIS\Core\Include\core_cm4.h)(0x69FC5779)
 I (RTE\Device\system_stm32f4xx.h)(0x69FEF51C)
-F (.\kernel.h)(0x69FEF942)()
-F (.\kernel.s)(0x69FF0857)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 541" -Wa,armasm,--pd,"STM32F469xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/kernel.o)
+F (.\kernel.h)(0x6A045586)()
+F (.\kernel.s)(0x6A046CFC)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/_STM32F469NIH-IC:/Keil/ARM/CMSIS/6.3.0/CMSIS/Core/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 541" -Wa,armasm,--pd,"STM32F469xx SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/kernel.o)

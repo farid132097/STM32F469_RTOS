@@ -7,7 +7,7 @@
   Description   : ARM Cortex M4F kernel for bare-metal RTOS
 	Devices       : Tested on STM32F469NIHx
   Created       : May 06, 2026, 02:29 PM
-  Last Modified : May 06, 2026, 02:29 PM
+  Last Modified : May 13, 2026, 04:40 PM
 	
 */
 
@@ -26,7 +26,10 @@ uint64_t Kernel_Tick_SS64_Get(void);
 uint32_t Kernel_Tick_S_Get(void);
 void     Kernel_Timeout_Set(uint32_t val);
 uint32_t Kernel_Is_Timeout(void);
-uint32_t Kernel_CPU_Usage_Get(void);
+uint32_t Kernel_CPU_Usage_x10_Get(void);
+uint32_t Kernel_CPU_Usage_Avg_x10_Get(void);
+
+
 
 #endif
 

@@ -4,6 +4,7 @@
 #include "kernel.h"
 #include "gpio.h"
 
+
 __attribute__((noreturn)) void Task_PD4_Toggle(void){
 	
 	//orange
@@ -20,6 +21,7 @@ __attribute__((noreturn)) void Task_PD4_Toggle(void){
 
 }
 
+
 __attribute__((noreturn)) void Task_PD5_Toggle(void){
 	
 	//red led
@@ -34,6 +36,7 @@ __attribute__((noreturn)) void Task_PD5_Toggle(void){
 		Kernel_Task_Sleep(500);
 	}
 }
+
 
 __attribute__((noreturn)) void Task_PG6_Toggle(void){
 	
